@@ -1,5 +1,18 @@
 # @hyperlane-xyz/helloworld
 
+## 3.10.0
+
+### Minor Changes
+
+- 4e7a43be: Replace Debug logger with Pino
+
+### Patch Changes
+
+- Updated dependencies [ed0d4188]
+- Updated dependencies [4e7a43be]
+  - @hyperlane-xyz/sdk@3.10.0
+  - @hyperlane-xyz/core@3.10.0
+
 ## 3.9.0
 
 ### Patch Changes
