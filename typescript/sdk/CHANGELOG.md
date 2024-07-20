@@ -1,5 +1,34 @@
 # @hyperlane-xyz/sdk
 
+## 4.2.0
+
+### Minor Changes
+
+- 2c0ae3cf: Deploy to connextsepolia + superpositiontestnet
+- 0dedbf5a: Deploy to endurance, fusemainnet, zoramainnet
+- 388d2551: Added HyperlaneRelayer for relaying messages from the CLI
+- f83b492d: - Enable updating of hooks through the `EvmHookModule`, including IGP and gas oracles.
+  - Drive-by fixes to ISM module and tests.
+- 79740755: Add enroll remote router to WarpModule
+- 70899943: Adds hyperlane warp apply
+- 62d71fad: Add hyperlane warp update to extend a warp config
+- 49986aa9: Add collateralAddressOrDenom for collateralVault
+
+### Patch Changes
+
+- 7265a408: Add rpcUrl, chainId, and method(params) to smart provider logging.
+- 0a40dcb8: Update cosmos chain schema
+- ab827a3f: Removes innacurate contract verification check, resulting in proxy contracts not being marked as proxies during contract verification.
+- dfa90879: add error message for all calls to assert util
+- 5aa24611: Add 'isInitialized' check before initializing implementation contract (for contracts that disableInitializers in constructors).
+- 7fdd3958: Adds logic to prune and minify build artifacts to address 'entity size too large' error thrown from explorers. Note that the only identified instance of this issue is on BSC mainnet.
+- fef62967: ContractVerifier now adjusts timeouts based on explorer family, which helps with many rate-limiting related contract verification issues. In addition, the ContractVerifier verify logic has been greatly simplified to allowing for a predictable callstack + easy debugging.
+- be4617b1: Handle subdirectories for the folder in S3Validator class
+- Updated dependencies [388d2551]
+- Updated dependencies [dfa90879]
+  - @hyperlane-xyz/utils@4.2.0
+  - @hyperlane-xyz/core@4.2.0
+
 ## 4.1.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @hyperlane-xyz/utils
 
+## 4.2.0
+
+### Minor Changes
+
+- 388d2551: Added HyperlaneRelayer for relaying messages from the CLI
+- dfa90879: set the errorMessage argument as required for assert util function
+
 ## 4.1.0
 
 ## 4.0.0
