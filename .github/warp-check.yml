@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hello
-        run: echo "Hello, a new comment was added to a PR!"
+        run: echo "Hello, a new comment was added to a PR!!"
