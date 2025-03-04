@@ -12,7 +12,7 @@ on:
 jobs:
   check-warp-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request && github.event.issue.comments.author_association == 'MEMBER'}}
+    if: ${{ github.event.issue.pull_request && (github.event.issue.comments.author_association == 'MEMBER' || github.event.issue.comments.author_association == 'OWNER') }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +31,7 @@ jobs:
       - name: Checkout Registry
         uses: ./.github/actions/checkout-registry
 
-      - name: Parse Warp Id
+      - name: Parse Warp id
         uses: ./.github/actions/parse-warp-id-comments
         with:
           body: ${{ github.event.pull_request.body }}
