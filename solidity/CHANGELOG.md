@@ -1,5 +1,13 @@
 # @hyperlane-xyz/core
 
+## 4.2.0
+
+### Patch Changes
+
+- Updated dependencies [388d2551]
+- Updated dependencies [dfa90879]
+  - @hyperlane-xyz/utils@4.2.0
+
 ## 4.1.0
 
 ### Patch Changes
