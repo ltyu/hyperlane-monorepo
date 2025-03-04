@@ -31,7 +31,7 @@ jobs:
       - name: Checkout Registry
         uses: ./.github/actions/checkout-registry
 
-      - name: Parse Warp Id
+      - name: Parse Warp id
         uses: ./.github/actions/parse-warp-id-comments
         with:
           body: ${{ github.event.pull_request.body }}
