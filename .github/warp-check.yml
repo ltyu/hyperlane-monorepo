@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   say_hello:
-    if: github.event.issue.pull_request != null  # Ensures the comment is on a PR, not an issue
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - name: Say Hello
