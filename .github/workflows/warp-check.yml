@@ -1,16 +1,24 @@
-name: PR Comment Trigger
-
-on:
-  issue_comment:
-    types: [created]
-
-permissions:
-  pull-requests: read
+on: issue_comment
 
 jobs:
-  say_hello:
+  pr_commented:
+    # This job only runs for pull request comments
+    name: PR comment
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, a new comment was added to a PR!!!"
+      - run: |
+          echo A comment on PR $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
+
+  issue_commented:
+    # This job only runs for issue comments
+    name: Issue comment
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo A comment on issue $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
