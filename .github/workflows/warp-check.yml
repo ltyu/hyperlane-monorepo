@@ -3,16 +3,13 @@ name: checker
 on:
   issue_comment:
     types: ['created', 'edited']
-  pull_request:
-    branches:
-      - '*'
   merge_group:
   workflow_dispatch:
 
 jobs:
   check-warp-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request && (github.event.issue.comments.author_association == 'MEMBER' || github.event.issue.comments.author_association == 'OWNER') }}
+    if: ${{ github.event.issue.pull_request && (github.event.issue.author_association == 'MEMBER' || github.event.issue.author_association == 'OWNER') }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +28,7 @@ jobs:
       - name: Checkout Registry
         uses: ./.github/actions/checkout-registry
 
-      - name: Parse Warp id
+      - name: Parse Warp Id
         uses: ./.github/actions/parse-warp-id-comments
         with:
           body: ${{ github.event.pull_request.body }}
