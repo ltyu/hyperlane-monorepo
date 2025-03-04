@@ -1,3 +1,4 @@
+name: Warp Check
 on: issue_comment
 
 jobs:
