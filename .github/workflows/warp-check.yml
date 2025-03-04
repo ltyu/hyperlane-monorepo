@@ -9,7 +9,7 @@ on:
 jobs:
   check-warp-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request && (github.event.issue.author_association == 'MEMBER' || github.event.issue.author_association == 'OWNER') }}
+    if: ${{ github.event.issue.pull_request && (github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER') }}
     steps:
       - uses: actions/checkout@v4
         with:
