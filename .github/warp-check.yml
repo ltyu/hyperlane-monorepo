@@ -2,14 +2,15 @@ name: checker
 
 on:
   issue_comment:
+    types: ['created']
   merge_group:
   workflow_dispatch:
 
 jobs:
   check-warp-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request }}
+    if: github.event.issue.pull_request
     steps:
       - name: Yarn Install
         run: |
-          echo "running!"
+          echo "running!!!"
