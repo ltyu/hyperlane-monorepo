@@ -3,6 +3,9 @@ name: checker
 on:
   issue_comment:
     types: ['created', 'edited']
+  pull_request:
+    branches:
+      - '*'
   merge_group:
   workflow_dispatch:
 
